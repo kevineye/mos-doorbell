@@ -1,0 +1,45 @@
+description: Mongoose OS doorbell app
+version: 1.0
+
+libs_version: ${mos.version}
+modules_version: ${mos.version}
+mongoose_os_version: ${mos.version}
+
+filesystem:
+  - fs
+
+config_schema:
+  - ["app", "o", {title: "My app custom settings"}]
+  - ["app.led_pin", "i", 2, {title: "built-in LED GPIO pin"}]
+  - ["app.mqtt_topic", "s", "home/dev/sensors", {title: "MQTT topic base"}]
+  - ["app.ifttt_key", "s", "", {title: "IFTTT platform key"}]
+  - ["doors", "o", {title: "Doorbell door configuration"}]
+  - ["doors.d0", "o", {title: "Door 1 configuration"}]
+  - ["doors.d0.name", "s", "first", {title: "door 1 name"}]
+  - ["doors.d0.button", "i", 14, {title: "door 1 button pin"}]
+  - ["doors.d0.chime", "i", 5, {title: "door 1 chime pin"}]
+  - ["doors.d1", "o", {title: "Door 2 configuration"}]
+  - ["doors.d1.name", "s", "second", {title: "door 2 name"}]
+  - ["doors.d1.button", "i", 12, {title: "door 2 button pin"}]
+  - ["doors.d1.chime", "i", 5, {title: "door 2 chime pin"}]
+  - ["doors.d2", "o", {title: "Door 3 configuration"}]
+  - ["doors.d2.name", "s", "third", {title: "door 3 name"}]
+  - ["doors.d2.button", "i", 13, {title: "door 3 button pin"}]
+  - ["doors.d2.chime", "i", 5, {title: "door 3 chime pin"}]
+  - ["doors.d3", "o", {title: "Door 4 configuration"}]
+  - ["doors.d3.name", "s", "fourth", {title: "door 4 name"}]
+  - ["doors.d3.button", "i", 15, {title: "door 4 button pin"}]
+  - ["doors.d3.chime", "i", 4, {title: "door 4 chime pin"}]
+
+libs:
+  - origin: https://github.com/mongoose-os-libs/ca-bundle
+  - origin: https://github.com/mongoose-os-libs/rpc-service-config
+  - origin: https://github.com/mongoose-os-libs/rpc-service-fs
+  - origin: https://github.com/mongoose-os-libs/rpc-uart
+  - origin: https://github.com/mongoose-os-libs/ota-http-server
+  - origin: https://github.com/mongoose-os-libs/wifi
+  - origin: https://github.com/mongoose-os-libs/mjs
+  - origin: https://github.com/mongoose-os-libs/prometheus-metrics
+  - origin: https://github.com/mongoose-os-libs/mqtt
+
+manifest_version: 2017-05-18
